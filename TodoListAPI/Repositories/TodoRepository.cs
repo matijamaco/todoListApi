@@ -42,14 +42,10 @@ namespace TodoListAPI.Repositories
             await _context.SaveChangesAsync(); 
         }
 
-        public async Task DeleteAsync(int id) 
+        public async Task DeleteAsync(TodoItem item) 
         {
-            TodoItem? item = await GetByIdAsync(id); 
-
-            if (item != null) { 
-                _context.TodoItems.Remove(item); 
-                await _context.SaveChangesAsync(); 
-            } 
+            _context.TodoItems.Remove(item); 
+            await _context.SaveChangesAsync(); 
         }
     }
 }

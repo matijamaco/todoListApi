@@ -68,9 +68,8 @@ namespace TodoListAPI.Controllers
                 _logger.LogError("TodoListController => DeleteTodoItem: TodoItem not found");
                 return NotFound("TodoItem not found");
             }
-                
-
-            return Ok(result);
+            
+            return NoContent();
         }
 
         [HttpGet("byUser/{createdById}")]

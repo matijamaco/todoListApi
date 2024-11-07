@@ -8,7 +8,7 @@ namespace TodoListAPI.Repositories
         Task<TodoItem?> GetByIdAsync(int id);
         Task AddAsync(TodoItem item);
         Task UpdateAsync(TodoItem item);
-        Task DeleteAsync(int id);
+        Task DeleteAsync(TodoItem id);
         Task<IEnumerable<TodoItem>> GetByCreatedByIdAsync(int createdById);
     }
 }

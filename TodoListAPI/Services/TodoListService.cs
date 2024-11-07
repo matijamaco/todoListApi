@@ -44,9 +44,9 @@ namespace TodoListAPI.Services
 
             if (item == null) {
                 return null; 
-            } 
+            }
 
-            await _repository.DeleteAsync(item.Id);
+            await _repository.DeleteAsync(item);
 
             IEnumerable<TodoItem> remainingItems = await _repository.GetAllAsync();
             return remainingItems.Select(TodoItemMapper.ToDto);
